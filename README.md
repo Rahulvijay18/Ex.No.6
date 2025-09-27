@@ -2,17 +2,38 @@
 
 **Date:** 27-09-2025
 
-**Register no.:** [Enter Your Register No.]
+**Register no.:** 212223040164
 
------
 
-### **Aim**
+## **Aim**
 
 To write and implement a Python script that integrates with multiple AI tools (OpenAI's GPT and Google's Gemini) to automate the task of generating code. This experiment will use the **persona pattern** to request a specific application, then compare the generated code outputs to analyze their differences and generate actionable insights.
 
------
+---
 
-### **AI Tools & Libraries Required**
+### **Algorithm**
+
+**Input:** Text or prompt for AI task</br>
+**Output:** Comparative analysis of multiple AI outputs
+
+**Steps:**
+
+1. Define the AI task (e.g., summarizing an article).
+2. Create a prompt using the **persona pattern** for the AI (e.g., “Act as a Python programmer. Generate clean code for summarizing text”).
+3. Initialize API connections for each AI tool.
+4. Send the prompt to **AI Tool 1** and record output.
+5. Send the same prompt to **AI Tool 2** and record output.
+6. Repeat for additional AI tools if required.
+7. Analyze outputs for:
+
+   * Accuracy
+   * Readability
+   * Depth or completeness
+8. Generate a comparative table of results.
+9. Draw actionable insights (e.g., which tool is better for concise code, which is better for explanatory comments).
+
+---
+## **AI Tools & Libraries Required**
 
   * **Python 3.8+**
   * **AI Models:**
@@ -28,19 +49,9 @@ To write and implement a Python script that integrates with multiple AI tools (O
 
 -----
 
-Tool / Library	Purpose	Installation Command
-Python 3.8+	Core programming language	python.org
-OpenAI API Key	Authentication for GPT models	platform.openai.com
-Google AI API Key	Authentication for Gemini models	aistudio.google.com
-openai	Official Python client for OpenAI	pip install openai
-google-generativeai	Official Python client for Google AI	pip install google-generativeai
-requests	For making HTTP requests	pip install requests
-beautifulsoup4	For parsing HTML and XML	pip install beautifulsoup4
-python-dotenv	To manage environment variables	pip install python-dotenv
+# **Explanation**
 
-### **Explanation**
-
-#### **Concept: The Persona Pattern** 👨‍💻
+## **Concept: The Persona Pattern** 👨‍💻
 
 The **persona pattern** is a prompt engineering technique where you instruct the AI model to "act as" a specific character or expert. For programming, this is incredibly effective. Instead of a generic prompt like "make a web scraper," we use a persona:
 
@@ -48,11 +59,11 @@ The **persona pattern** is a prompt engineering technique where you instruct the
 
 This prompt frames the request, encouraging the AI to generate code that is efficient, follows best practices, and includes helpful comments, just as a human expert would.
 
-#### **Application Scenario**
+## **Application Scenario**
 
 The chosen task is to **create a Python script that scrapes the main news headlines from the BBC News homepage ([https://www.bbc.com/news](https://www.bbc.com/news))**. This is a common, real-world task that involves web requests and HTML parsing, making it a good test case for code generation.
 
-#### **Methodology**
+## **Methodology**
 
 1.  **Define a Single, Detailed Prompt:** A comprehensive prompt using the programmer persona will be created.
 2.  **Create a Master Python Script:** This script will:
@@ -63,7 +74,7 @@ The chosen task is to **create a Python script that scrapes the main news headli
 
 -----
 
-### **Implementation: Master Python Script**
+## **Implementation: Master Python Script**
 
 This script calls both AI APIs to generate code for the same task.
 
@@ -152,11 +163,11 @@ if __name__ == "__main__":
 
 -----
 
-### **Generated Outputs**
+# **Generated Outputs**
 
 Below are representative outputs that each AI model might generate from the prompt.
 
-#### **Output from ChatGPT (OpenAI)**
+## **Output from ChatGPT (OpenAI)**
 
 ```python
 # Filename: bbc_scraper_gpt.py
@@ -202,7 +213,7 @@ if __name__ == "__main__":
     scrape_bbc_headlines()
 ```
 
-#### **Output from Gemini (Google)**
+## **Output from Gemini (Google)**
 
 ```python
 # Filename: bbc_scraper_gemini.py
@@ -255,7 +266,7 @@ if __name__ == '__main__':
 
 -----
 
-### **Analysis and Discussion**
+# **Analysis and Discussion**
 
 Even with the same detailed prompt, the two models produced functionally similar but stylistically different code.
 
@@ -282,10 +293,29 @@ Even with the same detailed prompt, the two models produced functionally similar
 
 -----
 
-### **Conclusion**
+---
+
+### **Deliverables**
+
+1. Python code that sends prompts to multiple AI tools and records responses.
+2. Comparative table of AI outputs.
+3. Observations on which tool performs better under the same persona-based prompt.
+4. Insights on how persona patterns affect AI code generation.
+
+---
+
+
+# **Conclusion**
 
 This experiment demonstrates that the **persona pattern is highly effective** for generating functional, well-structured code from multiple AI tools. However, it also proves that **AI-generated code is not a simple copy-paste solution.**
 
   * Different models have different "opinions" on best practices (e.g., User-Agent vs. timeout).
   * The generated code is highly dependent on the target website's structure at a given moment and requires human verification.
   * The developer's role shifts from writing every line of code to acting as an **expert reviewer, integrator, and tester**. They must analyze the AI's output, merge the best parts from different models (like ChatGPT's User-Agent and Gemini's timeout handling), and validate the final script. This collaborative approach can significantly accelerate development while maintaining high quality.
+
+
+# Result:
+Thus the Development of Python Code Compatible with Multiple AI Tools has been executed success.
+
+
+
